@@ -1,5 +1,6 @@
 package efs.task.functional;
 
+import java.util.*;
 import java.util.Collection;
 import java.util.Comparator;
 import java.util.List;
@@ -32,6 +33,6 @@ class PeopleProcessor {
     Map<String, Double> averageAgeByCityOfLiving(Collection<Person> people) {
         return people.stream()
                 .collect(Collectors.groupingBy(Person::getCityOfLiving,
-                        Collectors.averagingDouble(Person::getAge)));
+                        Collectors.averagingInt(Person::getAge)));
     }
 }
